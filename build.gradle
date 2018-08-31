@@ -1,0 +1,53 @@
+apply plugin: 'scala'
+apply plugin: 'maven-publish'
+
+defaultTasks 'build'
+
+version "${projectVersion}"
+
+sourceCompatibility = 1.8
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+dependencies {
+  compile "org.scala-lang:scala-library:${scalaLibVersion}"
+
+  // Akka
+  compile "com.typesafe.akka:akka-actor_${scalaVersion}:${akkaVersion}"
+
+  // Junit5 test
+  testCompile "org.junit.jupiter:junit-jupiter-api:${jupiterVersion}"
+  testRuntime "org.junit.jupiter:junit-jupiter-engine:${jupiterVersion}"
+  testCompile "org.junit.jupiter:junit-jupiter-params:${jupiterVersion}"
+  testCompile "org.junit.vintage:junit-vintage-engine:${jupiterVersion}"
+
+  // Scala Test
+  testImplementation "org.scalatest:scalatest_${scalaVersion}:${scalaTestVersion}"
+  testImplementation "org.scalactic:scalactic_${scalaVersion}:${scalacticVersion}"
+}
+
+jar {
+  manifest {
+    attributes(
+      'Provider': "gradle ${gradle.gradleVersion}",
+      'Created-By': "gradle-${gradle.gradleVersion}",
+      'Build': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+      'Project': project.name,
+      'Version': version,
+      'Vendor': teamName,
+      'Last-commit': 'git rev-parse HEAD'.execute().getText().trim(),
+      'Branch': 'git rev-parse --abbrev-ref HEAD'.execute().getText().trim(),
+      'Dependecies':
+        configurations.runtimeClasspath.allDependencies
+          .collect {"${it.group}:${it.name}:${it.version}"}
+          .join(","),
+      'Dependecies-all':
+        configurations.runtimeClasspath.resolvedConfiguration.resolvedArtifacts
+          .collect {"${it.moduleVersion.id.group}:${it.moduleVersion.id.name}:${it.moduleVersion.id.version}"}
+          .join(",")
+      )
+  }
+}
