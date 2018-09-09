@@ -10,6 +10,9 @@ build/
 *.iml
 out/
 
+# VSCode
+.vscode/
+
 # Java / Scala / Jvm
 # Compiled class file
 *.class
