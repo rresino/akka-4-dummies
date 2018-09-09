@@ -8,11 +8,11 @@ Akka da soporte a ambos pero en esta guía vamos a mostrar los ejemplos con sint
 
 ## Paso 2: Crear un proyecto
 
-> Aunque pienses que solo con leerlo o seguir el libro es suficiente, te recomiendo encarecidamente según vayamos avanzando pruebes en tu máquina todos los ejemplos. Ya que el hecho de escribir los ejemplos y ver que sucede al ejecutarlos sirve para afianzar lo conocimientos. Te lo digo por experiencia propia :wink: .
+> Aunque pienses que solo con leerlo o seguir el libro es suficiente, te recomiendo encarecidamente que según vayamos avanzando pruebes en tu máquina todos los ejemplos. Ya que el hecho de escribir los ejemplos y ver que sucede al ejecutarlos sirve para afianzar lo conocimientos. Te lo digo por experiencia propia :wink: .
   
 Vamos a crear un proyecto para ir practicando todo lo que vamos viendo. 
 - Crear un proyecto usando [IntelliJ IDEA](https://www.jetbrains.com/idea/) o [Eclipse](https://www.eclipse.org/) o [VS Code](https://code.visualstudio.com/) .
-- Usar mi generador de proyectos Scala: [https://github.com/rresino/template-scala​](https://github.com/rresino/template-scala​) .
+- O usar mi generador de proyectos Scala: [https://github.com/rresino/template-scala​](https://github.com/rresino/template-scala​) .
 
 ### Requisitos:
 1. Java 8 o superior
