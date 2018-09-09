@@ -10,6 +10,7 @@ Este es un modesto manual y de gratuito para ayudar a la comunidad de los desarr
 - [Como empezar a usar Akka](./book/01_how_to_begin.md)
 - [Crear un proyecto desde 0](./book/02_init_project.md)
 - [Mi primer actor](./book/03_my_first_actor.md)
+- [Como crear un Actor](./book/04_how_to_create_actors.md)
 - [Links](./book/98_links.md)
 - [Faq](./99_faq.md)
 
