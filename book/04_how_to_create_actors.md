@@ -64,7 +64,7 @@ class FatherActor() extends Actor {
 }
 ```
 
-Este es el código de [ejemplo completo](..\src\main\scala\com\rresino\akka4dummies\c04\CreateActor.scala).
+Este es el código de [ejemplo completo](../src/main/scala/com/rresino/akka4dummies/c04/CreateActor.scala).
 
 --- 
 

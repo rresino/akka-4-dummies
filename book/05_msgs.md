@@ -49,7 +49,7 @@ Todos los actores tienen un buzón de mensajes o mailbox en el que van almacenan
 Pero en el caso que un actor no este disponible o no pueda procesar un mensaje este se almacenará en un buzón especial llamado `deadletter mailbox`. 
 
 
-Este es el código de [ejemplo completo](..\src\main\scala\com\rresino\akka4dummies\c05\MsgActor.scala).
+Este es el código de [ejemplo completo](../src/main/scala/com/rresino/akka4dummies/c05/MsgActor.scala).
 
 --- 
 

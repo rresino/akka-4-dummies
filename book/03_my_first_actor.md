@@ -67,7 +67,7 @@ Vamos a crear nuestro primer actor poco a poco.
 
 9. Es importante al final ejecutar `system.terminate()` para finalizar el contexto de los actores, sino se quedará activo esperando a la alguien lo finalice.  
 
-Este es el código de [ejemplo completo](..\src\main\scala\com\rresino\akka4dummies\c03\MyFirstActor.scala):
+Este es el código de [ejemplo completo](../src/main/scala/com/rresino/akka4dummies/c03/MyFirstActor.scala):
 
 ```scala
 import akka.actor.{Actor, ActorSystem, Props}
