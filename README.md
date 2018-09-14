@@ -11,6 +11,7 @@ Este es un modesto manual y de gratuito para ayudar a la comunidad de los desarr
 - [Crear un proyecto desde 0](./book/02_init_project.md)
 - [Mi primer actor](./book/03_my_first_actor.md)
 - [Como crear un Actor](./book/04_how_to_create_actors.md)
+- [Enviando mensajes](./book/05_msgs.md)
 - [Links](./book/98_links.md)
 - [Faq](./99_faq.md)
 

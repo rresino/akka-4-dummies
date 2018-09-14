@@ -2,7 +2,9 @@
 
 En el capitulo anterior vimos un método básico para crear un actor, pero existen más.
 
-- **Actor con un constructor sin parámetros o por defecto:** Es el uso más común de uso de los actores. Se crea utiliza `ActorSystem.actorOf` y usamos `Props[Class]` para indicarle el actor a crear. Como anteriormente indicamos el nombre es opcional pero es muy recomendable.
+## Actor con un constructor sin parámetros o por defecto
+
+Es el uso más común de uso de los actores. Utilizaremos `ActorSystem.actorOf` y  `Props[Class]` para indicarle el actor a crear. Como anteriormente indicamos el nombre es opcional pero es muy recomendable.
 
 ```scala
 val system = ActorSystem("CreateActor")
@@ -16,7 +18,9 @@ class SimpleActor extends Actor {
 }
 ```
 
-- **Actor con un constructor con parámetros:** Es el método utilizado en el caso que el actor a crear tenga (o queramos usar) un constructor con párametros. Es parecido al anterior pero sustituimos `Props[Class]` por la creación del objeto deseado.
+## Actor con un constructor con parámetros 
+
+Es el método utilizado en el caso que el actor posea (o queramos usar) un constructor con parámetros. Es parecido al anterior pero sustituimos `Props[Class]` por la creación del objeto deseado.
 
 ```scala
 val system = ActorSystem("CreateActor")
@@ -31,7 +35,9 @@ class ComplexActor(val times: Int) extends Actor {
 }    
 ```
 
-- **Actor anidado dentro de otro:** Es muy común crear actores desde otro, esto tendrá implicaciones a la hora de la supervisión que veremos más adelante. Para crearlo tan solo necesitaremos usar la variable `context` y su método `actorOf` para crear el actor.
+## Actor anidado dentro de otro 
+
+Es muy común crear actores desde otro actor, por ejemplo al recibir un mensaje o al inicializarse. Esto tendrá implicaciones a la hora de la supervisión que veremos más adelante. Para crearlo tan solo necesitaremos usar la variable `context` (heredada de la clase `Actor`) y su método `actorOf` para crear el actor.
 
 ```scala
 val system = ActorSystem("CreateActor")
@@ -62,6 +68,6 @@ Este es el código de [ejemplo completo](..\src\main\scala\com\rresino\akka4dumm
 
 --- 
 
-- Siguiente [????](./03_???.md)
+- Siguiente [Enviando mensajes](./05_msgs.md)
 - Volver a [Mi primer Actor](./03_my_first_actor.md)
 - [Ir al Inicio](../README.md) 
