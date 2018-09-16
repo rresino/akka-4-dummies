@@ -4,6 +4,7 @@ Ahora vamos a repasar como enviar mensajes a los actores. Existen 2 tipos:
 
 - `tell`
 - `ask`
+- `forward`
 
 ## `tell` o mensaje asíncrono
 
@@ -40,9 +41,16 @@ class MsgActor extends Actor {
 }
 ```
 
+## `forward` Reenvío de mensajes
+
+Puede darse la situación que quieras reenviar un mensaje a otro actor, para esto puedes usar el metodo `forward` para reenviar un mensaje. Permite el reenvío de mensajes tanto `ask` como `tell` porque envía también las referencias del `sender` original.
+
+- `actorRef forward "mensaje"`
+- `actorRef.forward("mensaje")`
+
 ## Mailbox
 
-Todos los actores tienen un buzón de mensajes o mailbox en el que van almacenandose los mensajes recibidos para mientras va procesandolos en el orden de llegada (FIFO). 
+Todos los actores tienen un buzón de mensajes o mailbox en el que van almacenándose los mensajes recibidos para mientras se van procesando en el orden de llegada (FIFO). 
 
 ## Deadletter mailbox
 

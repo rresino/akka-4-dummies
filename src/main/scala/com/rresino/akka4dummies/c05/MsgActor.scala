@@ -1,6 +1,6 @@
 package com.rresino.akka4dummies.c05
 
-import akka.actor.{Actor, ActorSystem, Props}
+import akka.actor.{Actor, ActorRef, ActorSystem, Props}
 import akka.pattern._
 import akka.util.Timeout
 
@@ -14,6 +14,7 @@ object MsgActor extends App {
 
   implicit val timeout = Timeout(1 seconds)
   val actor = system.actorOf(Props[MsgActor], name = "juanActor")
+  val actorProxy = system.actorOf(Props(new ProxyActor(actor)), name = "proxyActor")
 
   println("Voy a saludar:")
   actor ! "saluda"
@@ -23,9 +24,27 @@ object MsgActor extends App {
   val num = Await.result(future, 1 seconds).asInstanceOf[Int]
   println(s"La respuesta es: ${num}")
 
+  println("Voy a saludar usando un proxy:")
+  actor ! "saluda"
+  println("Voy a enviar un número al proxy:")
+  val futureProxy = actor ? 42
+
+  val numProxy = Await.result(futureProxy, 1 seconds).asInstanceOf[Int]
+  println(s"La respuesta es: ${numProxy}")
+
+
   println("Please press any key to exit:")
   try StdIn.readLine()
   finally system.terminate()
+}
+
+class ProxyActor(actorRef: ActorRef) extends Actor {
+  override def receive: Receive = {
+    case msg => {
+      println("Proxy ...")
+      actorRef forward msg
+    }
+  }
 }
 
 class MsgActor extends Actor {
