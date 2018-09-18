@@ -61,6 +61,6 @@ Este es el código de [ejemplo completo](../src/main/scala/com/rresino/akka4dumm
 
 --- 
 
-- Siguiente [????](./03_???.md)
+- Siguiente [Supervisión](./06_supervision.md)
 - Volver a [Como crear un Actor](./04_how_to_create_actors.md)
 - [Ir al Inicio](../README.md) 

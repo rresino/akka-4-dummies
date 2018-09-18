@@ -12,6 +12,7 @@ Este es un modesto manual y de gratuito para ayudar a la comunidad de los desarr
 - [Mi primer actor](./book/03_my_first_actor.md)
 - [Como crear un Actor](./book/04_how_to_create_actors.md)
 - [Enviando mensajes](./book/05_msgs.md)
+- [Supervisión](./book/06_supervision.md)
 - [Links](./book/98_links.md)
 - [Faq](./99_faq.md)
 
