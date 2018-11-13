@@ -25,7 +25,7 @@ Los actores tienen varios métodos que se pueden utilizar para realizar acciones
 
 - **PreRestart:** fase previa a un reinicio del actor tras un fallo.
 
-- **PostRestart:** fase posterior a un reinicio del actor tras un fallo. Es util para reinicializar lo necesario.
+- **PostRestart:** fase posterior a un reinicio del actor tras un fallo. Es util para volver a inicializar lo necesario.
 
 - **Unhandled:** método que se ejecuta cada vez que el actor (vivo) recibe un mensaje que no se procesa. Muy recomendado utilizar para logar mensajes perdidos y darse cuenta que se están perdiendo.
 
@@ -51,7 +51,7 @@ override def supervisorStrategy: SupervisorStrategy = ???
 - **OneForOneStrategy:** Se define un estrategia para el actor que falla unicamente. Define el máximo de ejecuciones en determinado tiempo y que hacer en función de cada acción. Puedes poner -1 para indicar que no hay limite, en uno o los 2 parámetros.
   ```scala
   override def supervisorStrategy: SupervisorStrategy =
-    OneForOneStrategy(maxNrOfRetries = 2, withinTimeRange = 1 second) {
+    OneForOneStrategy(maxNrOfRetries = 2, withinTimeRange = FiniteDuration(1, SECONDS)) {
       case e: UnsupportedOperationException => Restart
       case _ => Stop
     }
@@ -63,17 +63,19 @@ override def supervisorStrategy: SupervisorStrategy = ???
 
 - **Resume**: Ignora el error y continua. Mucho cuidado con esto porque puede esconder problemas potenciales.
 - **Stop**: Para el actor.
-- **Restart**: Resetea el actor.
+- **Restart**: Para y arranca el actor.
 - **Escalate**: Escala la supervisión al padre para que aplique su política de supervisión.
+
+> **Recomendación:** Sobre-escribe todos los métodos de que se producen en los cambios de estados para mostrar una traza, esto te ayudará a saber que pasa con cada actor.
 
 ### Ejemplos
 
-- **Ejemplo LifeCycleActor**: Ejemplo en el que se muetra como un actor padre generá 3 hijos mediante mensajes `ask` que ejecutarse todos los futuros empieza a enviarle mensajes para mostrar como se reinician todos los actores hijos al enviar un fallo leve, posteriormente como se paran los 3 actores al provocar un fallo grave. Es muy interesante ver como se pintan todas las trazas de Restart y PostStop al pararse. Puedes probar a cambiar el tipo de estrategia ver que pasa.
+- **Ejemplo SupervisionActor**: Ejemplo en el que se muestra como un actor padre generá 3 hijos mediante mensajes `ask` que ejecutarse todos los futuros empieza a enviarle mensajes para mostrar como se reinician todos los actores hijos al enviar un fallo leve, posteriormente como se paran los 3 actores al provocar un fallo grave. Es muy interesante ver como se pintan todas las trazas de Restart y PostStop al pararse. Puedes probar a cambiar el tipo de estrategia ver que pasa.
 
-Este es el código de [ejemplo completo](../src/main/scala/com/rresino/akka4dummies/c06/LifeCycleActor.scala).
+Este es el código de [ejemplo completo](../src/main/scala/com/rresino/akka4dummies/c06/SupervisionActor.scala).
 
 --- 
 
-- Siguiente [????](./03_???.md)
+- Siguiente [Como Parar/Matar un actor](./07_stopping.md)
 - Volver a [Enviando mensajes](./05_msgs.md)
 - [Ir al Inicio](../README.md) 

@@ -4,20 +4,20 @@ import akka.actor.SupervisorStrategy.{Restart, Resume, Stop}
 import akka.actor._
 import akka.pattern._
 import akka.util.Timeout
-import com.rresino.akka4dummies.c06.LifeCycleActor.{Create, Msg}
+import com.rresino.akka4dummies.c06.SupervisionActor.{Create, Msg}
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration._
 import scala.io.StdIn
-import scala.util.Success
+import scala.util.{Failure, Success}
 
-object LifeCycleActor extends App {
+object SupervisionActor extends App {
 
   val system = ActorSystem("LifeCycleActor")
 
-  implicit val timeout = Timeout(1 seconds)
+  implicit val timeout = Timeout(1, SECONDS)
 
-  val father = system.actorOf(Props[LifeCycleFatherActor], name = "lifeFatherActor")
+  val father = system.actorOf(Props[SupervisionFatherActor], name = "lifeFatherActor")
 
   case class Msg(action: String)
   case class Create(name: String)
@@ -35,6 +35,7 @@ object LifeCycleActor extends App {
       a ! Msg("hello")
       a ! Msg("falla grave")
     }
+    case Failure(ex) => println("Something was wrong: " + ex.getMessage)
   }
 
   println("Please press any key to exit:")
@@ -42,18 +43,20 @@ object LifeCycleActor extends App {
   finally system.terminate()
 }
 
-class LifeCycleFatherActor extends Actor {
+class SupervisionFatherActor extends Actor {
 
   override def receive: Receive = {
     case Create(name) => {
-      val son = context.actorOf(Props[LifeCycleSonActor], name)
+      val son = context.actorOf(Props[SupervisionSonActor], name)
       sender() ! son
     }
     case _ => println("Sigo vivo")
   }
 
   override def supervisorStrategy: SupervisorStrategy =
-    AllForOneStrategy(maxNrOfRetries = 10, withinTimeRange = 10 second) {
+    AllForOneStrategy(maxNrOfRetries = 10,
+      withinTimeRange = FiniteDuration(10, SECONDS)) {
+
       case _: ArithmeticException => {
         println("Restaring ...")
         Restart
@@ -71,7 +74,7 @@ class LifeCycleFatherActor extends Actor {
   override def unhandled(message: Any): Unit = println("unhandled(message)")
 }
 
-class LifeCycleSonActor extends Actor {
+class SupervisionSonActor extends Actor {
 
   override def preStart(): Unit = {
     println("preStart()")
