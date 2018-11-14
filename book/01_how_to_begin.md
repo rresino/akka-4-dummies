@@ -14,5 +14,5 @@ Primero empezaremos a preparar el entorno para empezar a trastear Akka. Ir a [Cr
 ---
 
 - Siguiente [Crear un proyecto desde 0](./02_init_project.md)
-- Volver a [El porque](./book/00_why.md)
-- [Ir al Inicio](../README.md) 
+- Volver a [El porque](./00_why.md)
+- [Ir al Inicio](../README.md)
