@@ -68,6 +68,6 @@ akka {
 
 ---
 
-- Siguiente [Como Parar/Matar un actor](./07_stopping.md)
-- Volver a [Enrutado de mensajes](./09_routing.md)
+- Siguiente [Enrutado de mensajes](./09_routing.md)
+- Volver a [Como Parar/Matar un actor](./07_stopping.md)
 - [Ir al Inicio](../README.md)
