@@ -46,7 +46,7 @@ class LittleStackActor extends FSM[StackState, collection.mutable.MutableList[In
 
 ## Acciones
 
-Ahora viene lo más complejo que es indicar que queremos que hacer en función del estado del actor y de la acción. Esto se realiza usando el método `when(S)` y defines con `case` los que hacer para cada acción, no es imprescindible cubrir todas las acciones posibles.
+Ahora viene lo más complejo que es indicar que queremos que hacer en función del estado del actor y de la acción. Esto se realiza usando el método `when(S)` y un `case` para cada acción, no es imprescindible cubrir todas las acciones posibles.
 
 En este ejemplo indicamos que si es actor está en el estado `Stack` y recibe la acción `AddElement` llamará al método `addElementToStack`. Para la acción `DeleteElement` llamará al método `deleteElementToStack`. Y por último para la acción `CleanStack` llamará al método `cleanStack`.
 
@@ -58,7 +58,7 @@ En este ejemplo indicamos que si es actor está en el estado `Stack` y recibe la
   }
 ```
 
-Es importante que para todo las acciones indique si el actor cambiar de estado indicado cual con `goto(S)` o si se mantiene en el estado actual usando `stay()`. En nuestro ejemplo para evitar duplicar código nos hemos llevado la lógica a unos métodos. También es necesario indicar el dato interno del actor usando `using(D)`
+Es importante que para todo las acciones indique si el actor cambiar de estado indicado cual con `goto(S)` o si se mantiene en el estado actual usando `stay()`. En nuestro ejemplo para evitar duplicar código nos hemos llevado la lógica a unos métodos. También es necesario indicar el esta interno del actor usando `using(D)`
 
 ```scala
   def cleanStack(stack: myStack): FSM.State[StackState, myStack] = {
@@ -97,7 +97,7 @@ En el ejemplo hacemos un uso muy básico ya que solo lo utilizamos para logar la
 
 ## Unhandled event
 
-Como bien indique arriba no es obligatorio manejar todas las combinaciones de estado - acción, pero en el caso que no se haga y se produzca el sistema no pintará una traza de advertencia:
+Como bien indique arriba no es obligatorio manejar todas las combinaciones de estado - acción, pero en el caso que no se haga el sistema nos avisará lanzando una traza de advertencia:
 
 ```bash
 [LifeCycleActor-akka.actor.default-dispatcher-3] [akka://LifeCycleActor/user/myLittleStack] unhandled event DeleteElement in state EmptyStack
@@ -118,6 +118,5 @@ Puedes ver el ejemplo completo en: [FSMExample](../src/main/scala/com/rresino/ak
 
 ---
 
-- Siguiente [????](./03_???.md)
-- Volver a [Como crear un Actor](./04_how_to_create_actors.md)
-- [Ir al Inicio](../README.md) 
+- Volver a [Enrutado de mensajes](./09_routing.md)
+- [Ir al Inicio](../README.md)

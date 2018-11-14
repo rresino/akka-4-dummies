@@ -62,5 +62,6 @@ Hay un código de ejemplo en el que se puede ver la diferencias de usar un tipo 
 
 ---
 
+- Siguiente [FSM](./10_fsm.md)
 - Volver a [Configuración](./08_configuracion.md)
 - [Ir al Inicio](../README.md)
