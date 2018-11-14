@@ -1,37 +1,24 @@
-## Welcome to GitHub Pages
+# akka-4-dummies
 
-You can use the [editor on GitHub](https://github.com/rresino/akka-4-dummies/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+![Akka](./book/img/akka_128.png "Akka")
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Este es un modesto manual para ayudar a la comunidad de los desarrolladores a aprender a usar Akka. Es 100% gratuito y siempre lo será.
 
-### Markdown
+## Indice
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/rresino/akka-4-dummies/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- [El porque](./book/00_why.md)
+- [Como empezar a usar Akka](./book/01_how_to_begin.md)
+- [Crear un proyecto desde 0](./book/02_init_project.md)
+- [Mi primer actor](./book/03_my_first_actor.md)
+- [Como crear un Actor](./book/04_how_to_create_actors.md)
+- [Enviando mensajes](./book/05_msgs.md)
+- [Supervisión](./book/06_supervision.md)
+- [Como Parar/Matar un actor](./book/07_stopping.md)
+- [Configuración](./book/08_configuration.md)
+- [Enrutado de mensajes](./book/09_routing.md)
+- [Dispacher](./book/__.md)
+- [Jugando con el buzón: stash, become y unbecome](./book/__.md)
+- [FSM](./book/fsm.md)
+- [Timer](./book/__.md)
+- [Links](./book/98_links.md)
+- [Faq](./99_faq.md)
