@@ -33,8 +33,8 @@ son ! Kill
 
 > En general no se recomienda parar actores usando `PoisonPill` o `Kill` y usar métodos más controlados como `stop`.
 
---- 
+---
 
-- Siguiente [????](./03_???.md)
-- Volver a [Como crear un Actor](./04_how_to_create_actors.md)
-- [Ir al Inicio](../README.md) 
+- Siguiente [Configuración](./08_configuracion.md)
+- Volver a [Supervisión](./06_supervision.md)
+- [Ir al Inicio](../README.md)

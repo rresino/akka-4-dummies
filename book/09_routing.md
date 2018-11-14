@@ -1,6 +1,6 @@
 # Enrutado de mensajes
 
-Akka permite configurar como dirigir un mensaje a los multiples actores o pool de actores, para optimizar el comportamiento deseado.
+Akka permite configurar como dirigir un mensaje a los múltiples actores o pool de actores, para optimizar el comportamiento deseado.
 
 > Al decir enrutado me refiero [El enrutamiento o ruteo es la función de buscar un camino entre todos los posibles en una red de paquetes](https://es.wikipedia.org/wiki/Encaminamiento), en este caso mensajes.
 
@@ -62,6 +62,5 @@ Hay un código de ejemplo en el que se puede ver la diferencias de usar un tipo 
 
 ---
 
-- Siguiente [????](./03_???.md)
-- Volver a [Como crear un Actor](./04_how_to_create_actors.md)
-- [Ir al Inicio](../README.md) 
+- Volver a [Configuración](./08_configuracion.md)
+- [Ir al Inicio](../README.md)

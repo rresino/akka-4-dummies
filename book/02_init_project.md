@@ -12,8 +12,8 @@ Akka da soporte a ambos pero en esta guía vamos a mostrar los ejemplos con sint
   
 Vamos a crear un proyecto para ir practicando todo lo que vamos viendo.
 
-- Crear un proyecto usando [IntelliJ IDEA](https://www.jetbrains.com/idea/) o [Eclipse](https://www.eclipse.org/) o [VS Code](https://code.visualstudio.com/) .
-- O usar mi generador de proyectos Scala: [https://github.com/rresino/template-scala​](https://github.com/rresino/template-scala​) .
+- Crear un proyecto usando [IntelliJ IDEA](https://www.jetbrains.com/idea/) o [Eclipse](https://www.eclipse.org/ide/) o [VS Code](https://code.visualstudio.com/) .
+- O usar mi generador de proyectos Scala: [https://rresino.github.io/template-scala/​](https://rresino.github.io/template-scala/) .
 
 ### Requisitos:
 
