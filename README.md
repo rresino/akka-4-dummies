@@ -23,7 +23,7 @@ Este es un modesto manual para ayudar a la comunidad de los desarrolladores a ap
 ### Akka Avanzado
 
 - [Akka Avanzado](./book/adv/README.md)
-- [Dispachers](./book/adv/01_dispachers.md)
+- [Dispatchers](./book/adv/01_dispatchers.md)
 - [stash, become y unbecome: Jugando con el buzón](./book/adv/02_mailbox.md)
 - [Temporizadores](./book/adv/03_time.md)
 

@@ -4,11 +4,11 @@ Hasta ahora hemos cubierto los aspectos básico necesarios para poder abordar cu
 
 ## Indice
 
-- [Dispachers](./01_dispachers.md)
+- [Dispatchers](./01_dispatchers.md)
 - [stash, become y unbecome: Jugando con el buzón](./02_mailbox.md)
 - [Temporizadores](./03_time.md)
 
 ---
 
-- Siguiente [Dispachers](./book/adv/01_dispachers.md)
+- Siguiente [Dispatchers](./book/adv/01_dispatchers.md)
 - [Ir al Inicio](../../README.md)
