@@ -2,11 +2,11 @@
 
 ## Jerarquía de actores
 
-Todos los actores pertenecen a una jerarquía de actores en la unos actores pertenecen a un padre hasta llegar a `root guardian` o actor raíz. De ese actor solo dependen 2 actores `guardian` y `system guardian`. 
+Todos los actores pertenecen a una jerarquía de actores en la unos actores pertenecen a un padre hasta llegar a `root guardian` o actor raíz. De ese actor solo dependen 2 actores `guardian` y `system guardian`.
 
 - `/` o `root guardian` : Es el actor padre de todos. No es un actor real pero se le pueden asignar políticas de supervisión para que el resto de actores la hereden automáticamente.
 - `/user` o `guardian` : Es el guardian de todos los actores creados por el usuario.
-- `/system` o `guardian` : Es el guardian de todos los actores internos o del sistema.
+- `/system` o `system guardian` : Es el guardian de todos los actores internos o del sistema.
 - `/deadLetters` : Es el actor encargado de recibir todos esos mensajes perdidos o que no son procesados por ningún actor.
 - `/temp` : Es el padre de aquellos actor de sistema con un tiempo de vida muy corto.
 - `/remote` : Realmente no es un actor sino un path artificial para referirse a la referencias de los actores que tiene un supervisor con una referencia a un actor remoto.
