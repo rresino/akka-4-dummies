@@ -58,7 +58,7 @@ Pero en el caso que un actor no este disponible o no pueda procesar un mensaje e
 
 Este es el código de [ejemplo completo](../src/main/scala/com/rresino/akka4dummies/c05/MsgActor.scala).
 
---- 
+---
 
 - Siguiente [Supervisión](./06_supervision.md)
 - Volver a [Como crear un Actor](./04_how_to_create_actors.md)

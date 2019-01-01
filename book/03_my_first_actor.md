@@ -1,11 +1,11 @@
 # Mi primer Actor
 
-Vamos a crear nuestro primer actor poco a poco. 
+Vamos a crear nuestro primer actor poco a poco.
 
 1. Primero crearemos nuestra clase MyFirstActor (o lo que quieras).
 
 2. Hacemos que herede de la clase `akka.actor.Actor`. Lo que nos obliga a implementar el método `receive`.
-   
+
   ```scala
   class MyFirstActor extends Actor {
     override def receive: Receive = ???
