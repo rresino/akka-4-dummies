@@ -31,14 +31,14 @@ Esta librería es la base mínima para crear y usar los actores de Akka.
 
 ```groovy
 dependencies {
-  compile group: 'com.typesafe.akka', name: 'akka-actor_2.12', version: '2.5.16'
+  compile group: 'com.typesafe.akka', name: 'akka-actor_2.12', version: '2.5.19'
 }
 ```
 
 - SBT
 
 ```
-libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.16"
+libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.19"
 ```
 
 - Maven
@@ -47,11 +47,11 @@ libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.16"
 <dependency>
   <groupId>com.typesafe.akka</groupId>
   <artifactId>akka-actor_2.12</artifactId>
-  <version>2.5.16</version>
+  <version>2.5.19</version>
 </dependency>
 ```
 
-> Añado la versión 2.5.16 porque es la última publicada en el momento de escritura del manual.
+> Añado la versión 2.5.19 porque es la última publicada en el momento de escritura del manual.
 
 ---
 
