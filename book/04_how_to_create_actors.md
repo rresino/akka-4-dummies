@@ -74,7 +74,7 @@ Por ejemplo el path del siguiente actor será `/user/actorFather`.
 
 ```scala
 system.actorOf(
-    Props[FatherActor], name = "/actorFather")
+    Props[FatherActor], name = "actorFather")
 ```
 
 > Cuidado con intentar crear 2 actores con el mismo path + nombre porque al intentar crear un actor con un path ya existente se provocará una excepción de tipo `akka.actor.InvalidActorNameException`.

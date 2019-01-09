@@ -50,7 +50,7 @@ Puede darse la situación que quieras reenviar un mensaje a otro actor, para est
 
 ## Mailbox
 
-Todos los actores tienen un buzón de mensajes o mailbox en el que van almacenándose los mensajes recibidos para mientras se van procesando en el orden de llegada (FIFO). 
+Todos los actores tienen un buzón de mensajes o mailbox en el que van almacenándose los mensajes recibidos para mientras se van procesando en el orden de llegada (FIFO).
 
 ## Deadletter mailbox
 
