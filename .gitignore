@@ -90,6 +90,7 @@ local.properties
 
 # sbteclipse plugin
 .target
+project/target
 
 # STS (Spring Tool Suite)
 .springBeans

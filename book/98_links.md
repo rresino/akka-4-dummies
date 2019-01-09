@@ -8,6 +8,5 @@ Enlace útiles para toda la familia.
 
 ---
 
-- Siguiente [Faq](./99_faq.md)
-- Volver a [??](./book/???.md)
-- [Ir al Inicio](../README.md) 
+- [Faq](./99_faq.md)
+- [Ir al Inicio](../README.md)

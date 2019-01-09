@@ -50,16 +50,15 @@ Puede darse la situación que quieras reenviar un mensaje a otro actor, para est
 
 ## Mailbox
 
-Todos los actores tienen un buzón de mensajes o mailbox en el que van almacenándose los mensajes recibidos para mientras se van procesando en el orden de llegada (FIFO). 
+Todos los actores tienen un buzón de mensajes o mailbox en el que van almacenándose los mensajes recibidos para mientras se van procesando en el orden de llegada (FIFO).
 
 ## Deadletter mailbox
 
-Pero en el caso que un actor no este disponible o no pueda procesar un mensaje este se almacenará en un buzón especial llamado `deadletter mailbox`. 
-
+Pero en el caso que un actor no este disponible o no pueda procesar un mensaje este se almacenará en un buzón especial llamado `deadletter mailbox`.
 
 Este es el código de [ejemplo completo](../src/main/scala/com/rresino/akka4dummies/c05/MsgActor.scala).
 
---- 
+---
 
 - Siguiente [Supervisión](./06_supervision.md)
 - Volver a [Como crear un Actor](./04_how_to_create_actors.md)

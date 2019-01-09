@@ -5,6 +5,8 @@
 Son máquinas de estado en las que el actor guarda un estado que se puede ir modificando mediante acciones que se le envían.
 Os voy a enseñar como funcionan a través de un ejemplo que será un stack al que lo puedes añadir, borrar elementos o vaciar del todo.
 
+> ¿Pero que es una máquina de estado? [La gran Wikipedia puede ayudarte](https://es.wikipedia.org/wiki/M%C3%A1quina_de_estados)
+
 ## Definición de posibles estados
 
 Lo primero que hay que definir es que estados posibles puede tener nuestro actor. En nuestro ejemplo serán 3, `EmptyStack` stack vacío, `Stack` normal o `FullStack` lleno.
@@ -118,5 +120,6 @@ Puedes ver el ejemplo completo en: [FSMExample](../src/main/scala/com/rresino/ak
 
 ---
 
+- Siguiente [Akka Avanzado](./adv/README.md)
 - Volver a [Enrutado de mensajes](./09_routing.md)
 - [Ir al Inicio](../README.md)
