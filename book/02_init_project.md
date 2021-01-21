@@ -4,11 +4,16 @@ Como crear un proyecto para practicar con Akka.
 
 ## Paso 1: Elige tu sabor Java o Scala
 
-Akka da soporte a ambos pero en esta guía vamos a mostrar los ejemplos con sintaxis Scala.
+Akka da soporte a ambos pero en esta guía vamos a mostrar los ejemplos con 
+sintaxis Scala (lo siento me encanta Scala).
 
 ## Paso 2: Crear un proyecto
 
-> Aunque pienses que solo con leerlo o seguir el libro es suficiente, te recomiendo encarecidamente que según vayamos avanzando pruebes en tu máquina todos los ejemplos. Ya que el hecho de escribir los ejemplos y ver que sucede al ejecutarlos sirve para afianzar lo conocimientos. Te lo digo por experiencia propia :wink: .
+> Aunque pienses que solo con leerlo o seguir el libro es suficiente, 
+> te recomiendo encarecidamente que según vayamos avanzando pruebes en tu 
+> máquina todos los ejemplos. Ya que el hecho de escribir los ejemplos y ver 
+> que sucede al ejecutarlos sirve para afianzar lo conocimientos. Te lo digo 
+> por experiencia propia.
   
 Vamos a crear un proyecto para ir practicando todo lo que vamos viendo.
 
@@ -18,7 +23,7 @@ Vamos a crear un proyecto para ir practicando todo lo que vamos viendo.
 ### Requisitos:
 
 1. Java 8 o superior
-2. Scala 2.12 (solo si vas a optar por usar Scala)
+2. Scala 2.13 (solo si vas a optar por usar Scala)
 3. Gestor de librerías (opcional pero recomendable). Véase Maven, Gradle, o SBT.
 
 ## Paso 3: Añadir las librerías necesarias
@@ -31,14 +36,14 @@ Esta librería es la base mínima para crear y usar los actores de Akka.
 
 ```groovy
 dependencies {
-  compile group: 'com.typesafe.akka', name: 'akka-actor_2.12', version: '2.5.19'
+  compile group: 'com.typesafe.akka', name: 'akka-actor_2.13', version: '2.6.11'
 }
 ```
 
 - SBT
 
 ```
-libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.19"
+libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.6.11"
 ```
 
 - Maven
@@ -46,12 +51,12 @@ libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.5.19"
 ```xml
 <dependency>
   <groupId>com.typesafe.akka</groupId>
-  <artifactId>akka-actor_2.12</artifactId>
-  <version>2.5.19</version>
+  <artifactId>akka-actor_2.13</artifactId>
+  <version>2.6.11</version>
 </dependency>
 ```
 
-> Añado la versión 2.5.19 porque es la última publicada en el momento de escritura del manual.
+> Añado la versión 2.6.11 porque es la última publicada en el momento de escritura del manual.
 
 ---
 
