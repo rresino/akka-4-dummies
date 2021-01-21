@@ -43,7 +43,7 @@ Vamos a crear nuestro primer actor poco a poco.
   ```scala
   object MyFirstActor extends App {
     val system = ActorSystem("MyFirstActor")
-    val myActor = system.actorOf(Props[MyFirstActor], "Pepe_el_actor")
+    val pepe = system.actorOf(Props[MyFirstActor](), "pepe_el_actor")
   }
   ```
 
@@ -71,13 +71,14 @@ Este es el código de [ejemplo completo](../src/main/scala/com/rresino/akka4dumm
 
 ```scala
 import akka.actor.{Actor, ActorSystem, Props}
+
 import scala.io.StdIn
 
 object MyFirstActor extends App {
 
   val system = ActorSystem("MyFirstActor")
 
-  val pepe = system.actorOf(Props[MyFirstActor], "pepe_el_actor")
+  val pepe = system.actorOf(Props[MyFirstActor](), "pepe_el_actor")
 
   pepe ! "saluda"
   // pepe.tell("saluda")

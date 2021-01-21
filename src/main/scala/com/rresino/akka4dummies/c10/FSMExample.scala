@@ -1,26 +1,27 @@
 package com.rresino.akka4dummies.c10
 
 import akka.actor.{ActorSystem, FSM, Props}
-import com.rresino.akka4dummies.c10.FSMExample.myStack
+import com.rresino.akka4dummies.c10.FSMExample.MyStack
 
+import scala.collection.mutable
 import scala.io.StdIn
 import scala.util.{Random, Try}
 
 object FSMExample extends App {
 
-  type myStack =  collection.mutable.MutableList[Int]
+  type MyStack =  mutable.Queue[Int]
 
   val system = ActorSystem("LifeCycleActor")
-  val stackActor = system.actorOf(Props[LittleStackActor], name = "myLittleStack")
+  val stackActor = system.actorOf(Props[LittleStackActor](), name = "myLittleStack")
 
   def showOptions(): Unit= {
-    println
+    println()
     println("Hola bienvenido a Stack FSM:")
     println("- Pulse 1 para añadir un elemento aleatorio.")
     println("- Pulse 2 para borrar el primer elemento.")
     println("- Pulse 3 para vaciar el stack.")
     println("- Pulse Q para salir.")
-    println
+    println()
   }
 
   def readOption(): Try[Char] = Try {
@@ -58,10 +59,10 @@ case object CleanStack extends StackAction
 case object AddElement extends StackAction
 case object DeleteElement extends StackAction
 
-class LittleStackActor extends FSM[StackState, myStack] {
+class LittleStackActor extends FSM[StackState, MyStack] {
 
   val MAX_ELEMENTS = 5
-  startWith(EmptyStack, new myStack())
+  startWith(EmptyStack, new MyStack())
 
   when(EmptyStack) {
     case Event(AddElement, stack) => addElementToStack(stack)
@@ -89,13 +90,13 @@ class LittleStackActor extends FSM[StackState, myStack] {
     case b -> a => println(s"Transición de ${b} a ${a}")
   }
 
-  def cleanStack(stack: myStack): FSM.State[StackState, myStack] = {
+  def cleanStack(stack: MyStack): FSM.State[StackState, MyStack] = {
     stack.clear()
     println("stack: " + stack)
     goto(EmptyStack) using(stack)
   }
 
-  def addElementToStack(stack: myStack): FSM.State[StackState, myStack] = {
+  def addElementToStack(stack: MyStack): FSM.State[StackState, MyStack] = {
 
     stack += Random.nextInt(10)
     println("stack: " + stack)
@@ -106,7 +107,7 @@ class LittleStackActor extends FSM[StackState, myStack] {
     } using(stack)
   }
 
-  def deleteElementToStack(stack: myStack): FSM.State[StackState, myStack] = {
+  def deleteElementToStack(stack: MyStack): FSM.State[StackState, MyStack] = {
 
     println("stack: " + stack.tail)
     if (stack.length <= 1) {

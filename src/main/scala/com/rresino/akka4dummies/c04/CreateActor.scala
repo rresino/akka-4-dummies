@@ -7,7 +7,7 @@ object CreateActor extends App {
 
   val system = ActorSystem("CreateActor")
 
-  val actorDefCons = system.actorOf(Props[SimpleActor], name = "actorDefCons")
+  val actorDefCons = system.actorOf(Props[SimpleActor](), name = "actorDefCons")
   actorDefCons ! "saluda"
 
   val actorParamCons = system.actorOf(
@@ -15,7 +15,7 @@ object CreateActor extends App {
   actorParamCons ! "saluda"
 
   val actorFather = system.actorOf(
-    Props[FatherActor], name = "actorFather")
+    Props[FatherActor](), name = "actorFather")
   actorFather ! "saluda"
 
   println("Please press any key to exit:")
@@ -37,7 +37,7 @@ class ComplexActor(val times: Int) extends Actor {
 
 class FatherActor() extends Actor {
 
-  val son = context.actorOf(Props[SimpleActor], name = "hijo")
+  val son = context.actorOf(Props[SimpleActor](), name = "hijo")
 
   override def receive: Receive = {
     case "saluda" => {

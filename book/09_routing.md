@@ -42,7 +42,7 @@ akka.actor.deployment {
 
 ```scala
 val router: ActorRef =
-  context.actorOf(FromConfig.props(Props[SonActor]), "miPoolRouter")
+  context.actorOf(FromConfig.props(Props[SonActor]()), "miPoolRouter")
 ```
 
 - **Por código:** Se define en la clase deseada el enrutado y creas el pool de actores.
@@ -50,11 +50,11 @@ val router: ActorRef =
 ```scala
   val router = Router(RoundRobinRoutingLogic(),
     Vector(
-     ActorRefRoutee(context.actorOf(Props[SonActor], "Juanito")),
-     ActorRefRoutee(context.actorOf(Props[SonActor], "Luisito")),
-     ActorRefRoutee(context.actorOf(Props[SonActor], "Jorgito")),
-     ActorRefRoutee(context.actorOf(Props[SonActor], "Tomasito")),
-     ActorRefRoutee(context.actorOf(Props[SonActor], "Paquito"))
+     ActorRefRoutee(context.actorOf(Props[SonActor](), "Juanito")),
+     ActorRefRoutee(context.actorOf(Props[SonActor](), "Luisito")),
+     ActorRefRoutee(context.actorOf(Props[SonActor](), "Jorgito")),
+     ActorRefRoutee(context.actorOf(Props[SonActor](), "Tomasito")),
+     ActorRefRoutee(context.actorOf(Props[SonActor](), "Paquito"))
     ))
 ```
 

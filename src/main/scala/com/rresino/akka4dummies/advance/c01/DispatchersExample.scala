@@ -16,7 +16,7 @@ object DispatchersExample extends App {
 //    system.actorOf(Props[TesterActor].withDispatcher("disp-forkito"), "tester-" + id) ! Start())
   println("Dispatcher: disp-pinedito")
   (0 until 100).foreach(id =>
-    system.actorOf(Props[TesterActor].withDispatcher("disp-pinedito"),
+    system.actorOf(Props[TesterActor]().withDispatcher("disp-pinedito"),
       "tester-p-" + id) ! Start())
 
   println("Please press any key to exit:")
@@ -39,7 +39,7 @@ class TesterActor extends Actor {
       startTime = System.currentTimeMillis
       println("Start Test")
       (0 until MSG2SEND).foreach(i =>
-        context.actorOf(Props[PrintActor]) ! Message(i, "Hola hola"))
+        context.actorOf(Props[PrintActor]()) ! Message(i, "Hola hola"))
     }
 
     case MessageAck(_) => {

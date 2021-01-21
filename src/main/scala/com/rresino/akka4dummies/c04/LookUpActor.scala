@@ -11,7 +11,7 @@ object LookUpActor extends App {
   val system = ActorSystem("LookupActor")
   implicit val timeout = Timeout(1, SECONDS)
 
-  val actorDefCons = system.actorOf(Props[MyPathActor], name = "mypath")
+  val actorDefCons = system.actorOf(Props[MyPathActor](), name = "mypath")
 
   actorDefCons ! "saluda1"
 
@@ -28,7 +28,7 @@ object LookUpActor extends App {
 
 class MyPathActor extends Actor {
 
-  val son = context.actorOf(Props[MyPathSonActor], "SimpleActor")
+  val son = context.actorOf(Props[MyPathSonActor](), "SimpleActor")
   val actor3 = context.actorSelection("../mypath/SimpleActor")
   actor3 ! "saluda3"
 

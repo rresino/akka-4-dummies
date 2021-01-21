@@ -10,7 +10,7 @@ object Routing extends App {
 
   val system = ActorSystem("LifeCycleActor")
 
-  val father = system.actorOf(Props[FatherActor], name = "fatherActor")
+  val father = system.actorOf(Props[FatherActor](), name = "fatherActor")
 
   (1 to 1000).foreach(i => father ! Msg(s"Hola este es el mensaje número $i"))
 
@@ -29,15 +29,15 @@ class FatherActor extends Actor {
 //  val router = Router(RoundRobinRoutingLogic(),
   val router = Router(SmallestMailboxRoutingLogic(),
     Vector(
-     ActorRefRoutee(context.actorOf(Props[SonActor], "Juanito")),
-     ActorRefRoutee(context.actorOf(Props[SonActor], "Luisito")),
-     ActorRefRoutee(context.actorOf(Props[SonActor], "Jorgito")),
-     ActorRefRoutee(context.actorOf(Props[SonActor], "Tomasito")),
-     ActorRefRoutee(context.actorOf(Props[SonActor], "Paquito"))
+     ActorRefRoutee(context.actorOf(Props[SonActor](), "Juanito")),
+     ActorRefRoutee(context.actorOf(Props[SonActor](), "Luisito")),
+     ActorRefRoutee(context.actorOf(Props[SonActor](), "Jorgito")),
+     ActorRefRoutee(context.actorOf(Props[SonActor](), "Tomasito")),
+     ActorRefRoutee(context.actorOf(Props[SonActor](), "Paquito"))
     ))
 
   override def receive: Receive = {
-    case m: Msg => router.route(m, sender)
+    case m: Msg => router.route(m, sender())
   }
 
 }

@@ -38,9 +38,9 @@ Tambien tenemos que establecer el estado y los datos iniciales del actor usando 
 Una vez definido esto hay que añadir la llamada a `initialize()` para que inicialice nuestro actor. Es importante que antes se halla llamado al método `startWith(S,D)` para indicar cual va a ser los valores iniciales.
 
 ```scala
-class LittleStackActor extends FSM[StackState, collection.mutable.MutableList[Int]] {
+class LittleStackActor extends FSM[StackState, mutable.Queue[Int]] {
 
-  startWith(EmptyStack, new collection.mutable.MutableList[Int]())
+  startWith(EmptyStack, new mutable.Queue[Int]())
 
   initialize()
 }
@@ -63,12 +63,12 @@ En este ejemplo indicamos que si es actor está en el estado `Stack` y recibe la
 Es importante que para todo las acciones indique si el actor cambiar de estado indicado cual con `goto(S)` o si se mantiene en el estado actual usando `stay()`. En nuestro ejemplo para evitar duplicar código nos hemos llevado la lógica a unos métodos. También es necesario indicar el esta interno del actor usando `using(D)`
 
 ```scala
-  def cleanStack(stack: myStack): FSM.State[StackState, myStack] = {
+  def cleanStack(stack: myStack): FSM.State[StackState, MyStack] = {
     stack.clear()
     goto(EmptyStack) using(stack)
   }
 
-  def addElementToStack(stack: myStack): FSM.State[StackState, myStack] = {
+  def addElementToStack(stack: myStack): FSM.State[StackState, MyStack] = {
     stack += Random.nextInt(10)
     if (stack.length >= MAX_ELEMENTS) {
       goto(FullStack)
@@ -77,7 +77,7 @@ Es importante que para todo las acciones indique si el actor cambiar de estado i
     } using(stack)
   }
 
-  def deleteElementToStack(stack: myStack): FSM.State[StackState, myStack] = {
+  def deleteElementToStack(stack: myStack): FSM.State[StackState, MyStack] = {
     if (stack.length <= 1) {
       goto(EmptyStack)
     } else {

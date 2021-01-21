@@ -8,7 +8,7 @@ object MailBoxStashExample extends App {
 
   val system = ActorSystem("MailBoxStashExample")
 
-  val actor = system.actorOf(Props[CalculatorActor],"MailBox")
+  val actor = system.actorOf(Props[CalculatorActor](),"MailBox")
 
   actor ! ShowMsg()
   actor ! NumberMsg(1)

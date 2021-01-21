@@ -8,7 +8,7 @@ object MyFirstActor extends App {
 
   val system = ActorSystem("MyFirstActor")
 
-  val pepe = system.actorOf(Props[MyFirstActor], "pepe_el_actor")
+  val pepe = system.actorOf(Props[MyFirstActor](), "pepe_el_actor")
 
   pepe ! "saluda"
   // pepe.tell("saluda")

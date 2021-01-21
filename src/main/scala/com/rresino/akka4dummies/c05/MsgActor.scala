@@ -13,7 +13,7 @@ object MsgActor extends App {
   val system = ActorSystem("MsgActor")
 
   implicit val timeout = Timeout(1, SECONDS)
-  val actor = system.actorOf(Props[MsgActor], name = "juanActor")
+  val actor = system.actorOf(Props[MsgActor](), name = "juanActor")
   val actorProxy = system.actorOf(Props(new ProxyActor(actor)), name = "proxyActor")
 
   println("Voy a saludar:")
@@ -50,11 +50,10 @@ class ProxyActor(actorRef: ActorRef) extends Actor {
 class MsgActor extends Actor {
 
   override def receive: Receive = {
-    case name: String => println(s"Hola ${name} !!!")
-    case num: Int => {
+    case name: String => println(s"Hola $name !!!")
+    case num: Int =>
       println(s"Has enviado el número $num")
-      sender ! (num * 2)
-    }
+      sender() ! (num * 2)
   }
 
 }

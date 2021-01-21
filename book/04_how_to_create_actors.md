@@ -9,7 +9,7 @@ Es el uso más común de uso de los actores. Utilizaremos `ActorSystem.actorOf` 
 ```scala
 val system = ActorSystem("CreateActor")
 
-val actorDefCons = system.actorOf(Props[SimpleActor], name = "actorDefCons")
+val actorDefCons = system.actorOf(Props[SimpleActor](), name = "actorDefCons")
 
 class SimpleActor extends Actor {
   override def receive: Receive = {
@@ -74,7 +74,7 @@ Por ejemplo el path del siguiente actor será `/user/actorFather`.
 
 ```scala
 system.actorOf(
-    Props[FatherActor], name = "actorFather")
+    Props[FatherActor](), name = "actorFather")
 ```
 
 > Cuidado con intentar crear 2 actores con el mismo path + nombre porque al intentar crear un actor con un path ya existente se provocará una excepción de tipo `akka.actor.InvalidActorNameException`.
@@ -88,7 +88,7 @@ Hasta ahora hemos visto como crear actores. ¿Pero como puedo enviar un mensaje 
 Como hemos visto al crear un actor siempre nos devuelve la referencia a este `ActorRef` con la cual siempre podemos enviarle mensajes.
 
 ```scala
-  val actorDefCons = system.actorOf(Props[SimpleActor], name = "LookupActor")
+  val actorDefCons = system.actorOf(Props[SimpleActor](), name = "LookupActor")
   actorDefCons ! "saluda"
 ```
 

@@ -33,8 +33,6 @@ tasks.withType(ScalaCompile) {
   // Enable Scala warnings output
   scalaCompileOptions.additionalParameters = [
     "-feature",               // Emit warning and location for usages of features that should be imported explicitly.
-    "-Ypartial-unification",  // Enable partial unification in type constructor inference
-//    "-Ywarn-unused:imports",  // Warn if an import selector is not referenced.
     "-Xfatal-warnings"]       // Fail the compilation if there are any warnings.
 }
 

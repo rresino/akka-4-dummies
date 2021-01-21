@@ -7,7 +7,7 @@ object MailBoxExample extends App {
 
   val system = ActorSystem("MailBoxExample")
 
-  val actor = system.actorOf(Props[CalculatorActor],"MailBox")
+  val actor = system.actorOf(Props[CalculatorActor](),"MailBox")
 
   actor ! ShowMsg()
   actor ! NumberMsg(1)

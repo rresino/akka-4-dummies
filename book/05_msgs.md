@@ -32,10 +32,10 @@ Para enviar una respuesta a un mensaje hay que utilizar el objeto `sender` para 
 class MsgActor extends Actor {
 
   override def receive: Receive = {
-    case name: String => println(s"Hola ${name} !!!")
+    case name: String => println(s"Hola $name !!!")
     case num: Int => {
       println(s"Has enviado el número $num")
-      sender ! (num * 2)
+      sender() ! (num * 2)
     }
   }
 }

@@ -17,7 +17,7 @@ object SupervisionActor extends App {
 
   implicit val timeout = Timeout(1, SECONDS)
 
-  val father = system.actorOf(Props[SupervisionFatherActor], name = "lifeFatherActor")
+  val father = system.actorOf(Props[SupervisionFatherActor](), name = "lifeFatherActor")
 
   case class Msg(action: String)
   case class Create(name: String)
@@ -47,7 +47,7 @@ class SupervisionFatherActor extends Actor {
 
   override def receive: Receive = {
     case Create(name) => {
-      val son = context.actorOf(Props[SupervisionSonActor], name)
+      val son = context.actorOf(Props[SupervisionSonActor](), name)
       sender() ! son
     }
     case _ => println("Sigo vivo")
